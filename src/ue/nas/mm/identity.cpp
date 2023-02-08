@@ -101,7 +101,6 @@ nas::IE5gsMobileIdentity NasMm::generateSuci()
 nas::IE5gsMobileIdentity NasMm::getOrGeneratePreferredId()
 {
     if (m_storage->storedGuti->get().type != nas::EIdentityType::NO_IDENTITY)
-        m_logger->debug("CATCHER -- ")
         return m_storage->storedGuti->get();
 
     auto suci = getOrGenerateSuci();
