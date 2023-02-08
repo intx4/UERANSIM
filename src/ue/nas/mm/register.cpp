@@ -91,6 +91,19 @@ EProcRc NasMm::sendInitialRegistration(EInitialRegCause regCause)
 
     // Assign other fields
     request->mobileIdentity = getOrGeneratePreferredId();
+    if (request->mobileIdentity.type != nas::EIdentityType::NO_IDENTITY)
+    {
+        if (request->mobileIdentity.type == nas::EIdentityType::SUCI)
+        {
+            m_logger->debug("CATCHER -- IDENTITY TYPE SUCI VALUE [%s]",
+                            request->mobileIdentity.imsi.schemeOutput.c_str()); //with scheme 0 suci is saved in imsi because it is imsi
+        }
+        else if (request->mobileIdentity.type == nas::EIdentityType::GUTI || request->mobileIdentity.type == nas::EIdentityType::TMSI)
+        {
+            m_logger->debug("CATCHER -- IDENTITY TYPE TMSI VALUE [%d]",
+                            request->mobileIdentity.gutiOrTmsi.toTmsiValue());
+        }
+    }
     if (m_storage->lastVisitedRegisteredTai->get().hasValue())
         request->lastVisitedRegisteredTai = nas::IE5gsTrackingAreaIdentity{m_storage->lastVisitedRegisteredTai->get()};
     if (!requestedNssai.slices.empty())
@@ -238,7 +251,19 @@ EProcRc NasMm::sendMobilityRegistration(ERegUpdateCause updateCause)
     // request->networkSlicingIndication->dcni =
     //    isDefaultNssai ? nas::EDefaultConfiguredNssaiIndication::CREATED_FROM_DEFAULT_CONFIGURED_NSSAI
     //                   : nas::EDefaultConfiguredNssaiIndication::NOT_CREATED_FROM_DEFAULT_CONFIGURED_NSSAI;
-
+    if (request->mobileIdentity.type != nas::EIdentityType::NO_IDENTITY)
+    {
+        if (request->mobileIdentity.type == nas::EIdentityType::SUCI)
+        {
+            m_logger->debug("CATCHER -- IDENTITY TYPE SUCI VALUE [%s]",
+                            request->mobileIdentity.imsi.schemeOutput.c_str()); //with scheme 0 suci is saved in imsi because it is imsi
+        }
+        else if (request->mobileIdentity.type == nas::EIdentityType::GUTI || request->mobileIdentity.type == nas::EIdentityType::TMSI)
+        {
+            m_logger->debug("CATCHER -- IDENTITY TYPE TMSI VALUE [%d]",
+                            request->mobileIdentity.gutiOrTmsi.toTmsiValue());
+        }
+    }
     // Send the message
     auto rc = sendNasMessage(*request);
     if (rc != EProcRc::OK)

@@ -40,6 +40,7 @@ void NgapTask::handleInitialNasTransport(int ueId, const OctetString &nasPdu, in
     auto *ueCtx = findUeContext(ueId);
     if (ueCtx == nullptr)
         return;
+
     auto *amfCtx = findAmfContext(ueCtx->associatedAmfId);
     if (amfCtx == nullptr)
         return;
