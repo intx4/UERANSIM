@@ -14,7 +14,10 @@ testing 5G Core Network and studying 5G System.
 UERANSIM introduces the world's first and only open source 5G-SA UE and gNodeB implementation.
 
 ## This Fork
-This Fork simply enables logging of registration traces from ```nr_ue``` to stdout, which is used as a work around for actual network sniffing. 
+This Fork simply enables logging of registration traces from ```nr_ue``` to stdout, which is used as a workaround for actual network sniffing. 
+
+## Lawful Interception
+This repo is a submodule of the [P3LI5 project](https://github.com/intx4/P3LI5) and is meant for deployment with Docker
 
 ## Documentation
 
