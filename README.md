@@ -15,18 +15,8 @@ UERANSIM introduces the world's first and only open source 5G-SA UE and gNodeB i
 
 **WARNING:** I'm no longer active in the development of UERANSIM. However community contributions are welcomed.
 
-## Current Status
-
-Basic functionalities of UE and gNodeB are fully functional and ready to use. However some of the features are not complete.
-More details can be found at [Feature Set](https://github.com/aligungr/UERANSIM/wiki/Feature-Set).
-
-On the other hand, UERANSIM does not fully provide physical layer. 5G-NR radio interface is partially implemented, and simply simulated over UDP protocol.
-
-<p align="center">
-<img src="https://img.shields.io/badge/Radio%20Interface-simulated-orange" alt="OS Linux"/>
-<img src="https://img.shields.io/badge/Control%20Plane-functional-green" alt="OS Linux"/>  
-<img src="https://img.shields.io/badge/User%20Plane-functional-green" alt="OS Linux"/>
-</p>
+## This Fork
+This Fork simply enables logging of registration traces from ```nr_ue``` to stdout, which is used as a work around for actual network sniffing. 
 
 ## Documentation
 
@@ -34,18 +24,6 @@ You can find the documentation on [UERANSIM Wiki](https://github.com/aligungr/UE
 
 And, since the project is rapidly developing, please make sure that you have always
 the [latest](https://github.com/aligungr/UERANSIM/releases) UERANSIM.
-
-## Contributing
-
-Any contributions you make are greatly appreciated via [Pull Request](https://github.com/aligungr/UERANSIM/pulls).
-
-## Supporting
-
-You can support UERANSIM by:
-
-- Starring the GitHub repository,
-- Donating on [Open Collective](https://opencollective.com/UERANSIM)
-- Creating pull requests, submitting bugs, suggesting new features or documentation updates.
 
 ## License
 
