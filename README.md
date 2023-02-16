@@ -13,8 +13,6 @@ testing 5G Core Network and studying 5G System.
 
 UERANSIM introduces the world's first and only open source 5G-SA UE and gNodeB implementation.
 
-**WARNING:** I'm no longer active in the development of UERANSIM. However community contributions are welcomed.
-
 ## This Fork
 This Fork simply enables logging of registration traces from ```nr_ue``` to stdout, which is used as a work around for actual network sniffing. 
 
