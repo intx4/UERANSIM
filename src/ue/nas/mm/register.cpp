@@ -255,12 +255,12 @@ EProcRc NasMm::sendMobilityRegistration(ERegUpdateCause updateCause)
     {
         if (request->mobileIdentity.type == nas::EIdentityType::SUCI)
         {
-            m_logger->debug("CATCHER -- IDENTITY TYPE SUCI VALUE [%s]",
+            m_logger->debug("CATCHER -- IDENTITY TYPE [SUCI] VALUE [%s]",
                             request->mobileIdentity.imsi.schemeOutput.c_str()); //with scheme 0 suci is saved in imsi because it is imsi
         }
         else if (request->mobileIdentity.type == nas::EIdentityType::GUTI || request->mobileIdentity.type == nas::EIdentityType::TMSI)
         {
-            m_logger->debug("CATCHER -- IDENTITY TYPE TMSI VALUE [%d]",
+            m_logger->debug("CATCHER -- IDENTITY TYPE [TMSI] VALUE [%d]",
                             request->mobileIdentity.gutiOrTmsi.toTmsiValue());
         }
     }
